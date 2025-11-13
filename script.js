@@ -9,8 +9,6 @@ const gerarPdfBtn = document.getElementById("gerarPdfBtn");
 
 let palavras = [];
 
-// --- FUNÇÕES DE MANIPULAÇÃO DO FORMULÁRIO ---
-
 // Adiciona palavras-chave ao pressionar Enter
 palavraInput.addEventListener("keypress", e => {
   if (e.key === "Enter") {
@@ -53,7 +51,6 @@ document.getElementById("addRevisao").addEventListener("click", () => {
   revisoesContainer.appendChild(div);
 });
 
-// --- FUNÇÃO CENTRAL PARA COLETAR OS DADOS DO FORMULÁRIO ---
 // Reutilizada para gerar tanto o JSON quanto o PDF
 function construirDocumento() {
   // Coleta todas as revisões adicionadas
@@ -82,8 +79,6 @@ function construirDocumento() {
 
   return documento;
 }
-
-// --- LÓGICA DE GERAÇÃO (JSON e PDF) ---
 
 // Evento para gerar o documento JSON no formato MongoDB
 form.addEventListener("submit", e => {
@@ -243,4 +238,5 @@ form.addEventListener("submit", async e => {
     console.error('Erro de comunicação com o servidor:', error);
     alert('Não foi possível conectar ao servidor. Verifique se o back-end está rodando.');
   }
+
 });
